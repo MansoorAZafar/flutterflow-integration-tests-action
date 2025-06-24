@@ -13,7 +13,7 @@ on: [push]
       name: Integration Tests
       steps:
         - name: Test Integration Tests
-          uses: xxxx/xxxx@main
+          uses: flutterflow-integration-tests-action@master
         - name: After action
           run: |
             echo "Hello World!"
