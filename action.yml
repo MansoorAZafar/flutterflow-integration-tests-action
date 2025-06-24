@@ -9,7 +9,7 @@ inputs:
   test_path:
     description: "The path where the actual tests are"
     required: false
-    default: 'integration_test/integration_test.dart'
+    default: 'integration_test/test.dart'
   test_driver_path:
     description: "The path to the setup of the tests"
     required: false
