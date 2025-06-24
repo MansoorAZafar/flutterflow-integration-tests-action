@@ -18,6 +18,10 @@ inputs:
     description: "The port where chromedriver will be started in case you really need it"
     required: false
     default: 4444
+  target_device:
+    description: "Target device to run the test on (chrome, web_server, android ...)"
+    requried: false
+    default: "chrome"
 
 runs:
   using: "composite"
@@ -53,5 +57,5 @@ runs:
         flutter-version: ${{ inputs.flutter-version }}
 
     - name: Run Flutter Integration Driver Tests
-      run: xvfb-run --auto-servernum -- flutter drive --driver=${{ inputs.test_driver_path }} --target=${{ inputs.test_path }} -d chrome
+      run: xvfb-run --auto-servernum -- flutter drive --driver=${{ inputs.test_driver_path }} --target=${{ inputs.test_path }} -d ${{ inputs.target_device }}
       shell: bash
