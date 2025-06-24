@@ -4,20 +4,19 @@ This action will run the integration tests on flutterflow automatically. Note, I
 
 ### Example Usage
 
-```yml
+```yaml
 
 on: [push]
-jobs:
-	integration-test:
-		runs-on: ubuntu-latest
-		name: Integration Tests
-		steps:
-			- name: Test Integration Tests
-			  uses: xxxx/xxxx@main
-			
-			- name: After action
-			  run: |
-			  	echo "Hello World!"
+  jobs:
+    integration-test:
+      runs-on: ubuntu-latest
+      name: Integration Tests
+      steps:
+        - name: Test Integration Tests
+          uses: xxxx/xxxx@main
+        - name: After action
+          run: |
+            echo "Hello World!"
 ``` 
 
 ### Arguments
