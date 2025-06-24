@@ -1,6 +1,4 @@
 # Developed by Mansoor A Zafar :>
-# 
-# - Basically, Builds 
 name: "Build and Run Integration Tests for FlutterFlow Web App"
 description: "Composite action to build and test a Web App built on FlutterFlow"
 inputs:
