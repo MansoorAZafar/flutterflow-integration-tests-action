@@ -8,15 +8,15 @@ This action will run the integration tests on flutterflow automatically. Note, I
 
 on: [push]
 jobs:
-	integration-test:
-	  runs-on: ubuntu-latest
-	  name: Integration Tests
-	  steps:
-	    - name: Test Integration Tests
-	      uses: flutterflow-integration-tests-action@master
-	    - name: After action
-	      run: |
-        	echo "Hello World!"
+  integration-test:
+    runs-on: ubuntu-latest
+    name: Integration Tests
+    steps:
+      - name: Test Integration Tests
+        uses: flutterflow-integration-tests-action@master
+      - name: After action
+        run: |
+          echo "Hello World!"
 ``` 
 
 ### Arguments
