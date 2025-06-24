@@ -13,7 +13,7 @@ jobs:
     name: Integration Tests
     steps:
       - name: Test Integration Tests
-        uses: flutterflow-integration-tests-action@master
+        uses: MansoorAZafar/flutterflow-integration-tests-action@master
       - name: After action
         run: |
           echo "Hello World!"
