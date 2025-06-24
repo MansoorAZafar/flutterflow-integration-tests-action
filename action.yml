@@ -1,0 +1,59 @@
+# Developed by Mansoor A Zafar :>
+# 
+# - Basically, Builds 
+name: "Build and Run Integration Tests for FlutterFlow Web App"
+description: "Composite action to build and test a Web App built on FlutterFlow"
+inputs:
+  flutter-version:
+    description: "The current flutter version for FlutterFlow"
+    required: false
+    default: '3.27.3'
+  test_path:
+    description: "The path where the actual tests are"
+    required: false
+    default: 'integration_test/integration_test.dart'
+  test_driver_path:
+    description: "The path to the setup of the tests"
+    required: false
+    default: 'test_driver/integration_test.dart'
+  chrome_driver_port:
+    description: "The port where chromedriver will be started in case you really need it"
+    required: false
+    default: 4444
+
+runs:
+  using: "composite"
+  steps:
+    - name: Check out Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 'lts/*'
+
+    - name: Install Chrome Driver
+      run: npx @puppeteer/browsers install chromedriver@stable
+      shell: bash
+
+    - name: Verify Chrome Driver installed
+      run: chromedriver --version
+      shell: bash
+
+    - name: Launch Chrome Driver in the Background
+      run: chromedriver --port=${{ inputs.chrome_driver_port }} &
+      shell: bash
+
+    - name: Install xvfb for a Virtual Display
+      run: sudo apt-get install xvfb
+      shell: bash 
+
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: stable  
+        flutter-version: ${{ inputs.flutter-version }}
+
+    - name: Run Flutter Integration Driver Tests
+      run: xvfb-run --auto-servernum -- flutter drive --driver=${{ inputs.test_driver_path }} --target=${{ inputs.test_path }} -d chrome
+      shell: bash
