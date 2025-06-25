@@ -59,3 +59,7 @@ runs:
     - name: Run Flutter Integration Driver Tests
       run: xvfb-run --auto-servernum -- flutter drive --driver=${{ inputs.test_driver_path }} --target=${{ inputs.test_path }} -d ${{ inputs.target_device }}
       shell: bash
+
+branding:
+  icon: 'activity'
+  color: 'green'
