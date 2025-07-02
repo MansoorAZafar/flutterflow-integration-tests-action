@@ -1,6 +1,6 @@
 # FlutterFlow Integration Tests Composite Action
 
-This action will run the integration tests on flutterflow automatically. Note, I would recommend against swtiching the device from anything besides 'chrome', as whenever I tried, it failed. No argument is required, they all have default values. Also, by default, the flutter version is 3.27.3.
+This action will run the integration tests on flutterflow automatically. Note, I would recommend against switching the device from anything besides 'chrome', as whenever I tried, it failed. No argument is required, they all have default values. Also, by default, the flutter version is 3.27.3.
 
 ### Example Usage
 
