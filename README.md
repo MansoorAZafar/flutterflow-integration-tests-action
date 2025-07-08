@@ -24,7 +24,7 @@ jobs:
 | Argument | Description | Default Value |
 | --- | --- | --- |
 | flutter-version | The current version of Flutter that FlutterFlow is using | 3.27.3 |
-| test_path | The path where the actual tests are | integration_test/integration_test.dart |
+| test_path | The path where the actual tests are | integration_test/test.dart |
 | test_driver_path | The path to the setup of the tests | test_driver/integration_test.dart |
 | chrome_driver_port | The port where chromedriver will be started in case you need it | 4444 |
 | target_device | Target device to run the test on (chrome, web_server, android ...) | chrome |
